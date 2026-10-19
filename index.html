@@ -357,12 +357,19 @@
     .step:nth-child(2)::after{display:none;}
   }
 
+  /* HERO FACTS (education + skills) */
+  .hero-facts{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:22px; margin-top:48px; align-items:start;}
+  .hero-facts .skill-block{margin-bottom:14px;}
+  @media(max-width:860px){ .hero-facts{grid-template-columns:1fr;} }
+
   /* ABOUT */
-  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:52px;}
+  .about-grid{display:grid; grid-template-columns:1fr; gap:52px;}
+  #about .how{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px;}
+  @media(max-width:860px){ #about .how{grid-template-columns:1fr;} }
   .about-grid > *{min-width:0;}
   .about-body p{font-size:16.5px; line-height:1.75; color:var(--ink-soft); margin:0 0 16px; max-width:640px;}
   .about-body strong{color:var(--ink);}
-  .how{margin-top:28px; display:flex; flex-direction:column; gap:14px;}
+  .how{margin-top:0; display:flex; flex-direction:column; gap:14px;}
   .how-item{display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start;}
   .how-item .ico{width:44px; height:44px; border-radius:50%; background:var(--accent-tint); color:var(--accent); display:flex; align-items:center; justify-content:center;}
   .how-item .ico svg{width:21px; height:21px;}
@@ -464,11 +471,12 @@
       <div class="hero-text">
         <div class="eyebrow">Business &amp; Data Analytics</div>
         <h1 class="hero-name">Minh<br><em>Dinh</em></h1>
-        <p class="hero-sub">Honors student at Wake Technical Community College studying data analytics and statistics, after starting in Finance &amp; Business Analytics at UC Lindner. I work with retail and operations data: sales, orders, customers. I take raw Excel exports, model them in Power BI, and write the DAX and SQL that show a team where revenue comes from, where orders get stuck, and which customers are worth keeping.</p>
+        <p class="hero-sub">Honors student at Wake Technical Community College studying data analytics. I take raw data from <strong>Excel</strong>, clean and shape it in <strong>SQL</strong>, and turn it into <strong>Power BI</strong> dashboards. But most of my time goes into the step before: digging into the data, learning what every field really means, and talking with the people who created it so nothing gets misread. A dashboard is only as good as the understanding behind it, so that's where I start.</p>
         <p class="hero-quote">"Why is usually my first question."</p>
         <div class="hero-row">
           <a href="#projects" class="btn-sq btn-sq-primary">View projects →</a>
           <a href="#experience" class="btn-sq btn-sq-ghost">My experience</a>
+          <a href="https://catchafire.org/profiles/3439962/about" class="btn-sq btn-sq-ghost" target="_blank" rel="noopener">My volunteer work ↗</a>
         </div>
       </div>
       <div class="hero-art">
@@ -678,9 +686,33 @@
       </div>
     </div>
 
-    <div class="kpi-strip">
-      <div class="kpi"><div class="num">3.9</div><div class="label">GPA · Dean's List</div></div>
-      <div class="kpi"><div class="num">6+</div><div class="label">Analytics &amp; BI projects</div></div>
+    <div class="hero-facts">
+      <div class="hero-edu">
+        <div class="edu-block">
+          <div class="school">Wake Technical Community College</div>
+          <div class="deg">Associate in Sciences · Honors Program · GPA 3.9/4.0</div>
+          <div class="when">August 2025 – Present</div>
+        </div>
+        <div class="edu-block">
+          <div class="school">University of Cincinnati</div>
+          <div class="deg">Carl H. Lindner College of Business · Finance &amp; Business Analytics coursework before transferring · GPA 4.0/4.0</div>
+          <div class="when">August 2024 – May 2025</div>
+        </div>
+      </div>
+      <div class="hero-skills">
+        <div class="skill-block">
+          <h3>Technical</h3>
+          <div class="skill-tags"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Snowflake / star schema</span><span>SQL · Azure SQL</span><span>Python</span><span>Excel · Power Pivot</span></div>
+        </div>
+        <div class="skill-block">
+          <h3>Analytical methods</h3>
+          <div class="skill-tags"><span>Data modeling</span><span>KPI development</span><span>RFM segmentation</span><span>ETL</span><span>BI reporting</span><span>Exploratory analysis</span><span>Storytelling</span></div>
+        </div>
+        <div class="skill-block">
+          <h3>AI-augmented analysis</h3>
+          <div class="skill-tags"><span>Prompt engineering</span><span>Claude</span><span>Gemini</span><span>Grok</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1172,12 +1204,9 @@
   <div class="wrap">
     <div class="section-head">
       <h2>About</h2>
-      <span class="section-note">how I got here</span>
     </div>
     <div class="about-grid">
       <div class="about-body">
-        <p><strong>Hi, I'm Minh.</strong> I got into data analytics while working as a market researcher for Minh Trang Embroidery in Ninh Binh, Vietnam. The brand was losing visibility, so I went through 5 months of Facebook engagement data and surveyed 40+ customers to find out what actually made people buy, then used that to rework the content strategy.</p>
-        <p>I'm now in the Honors Program at <strong>Wake Technical Community College</strong>, focusing on data analytics and statistics. Before transferring, I studied Finance &amp; Business Analytics at the University of Cincinnati's Lindner College of Business.</p>
         <div class="how">
           <div class="how-item">
             <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
@@ -1191,30 +1220,6 @@
             <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
             <div><b>Make it usable on its own</b><span>Plain-English labels, slicers and tooltips, so a manager can answer the next question without calling me.</span></div>
           </div>
-        </div>
-      </div>
-      <div>
-        <div class="edu-block">
-          <div class="school">Wake Technical Community College</div>
-          <div class="deg">Associate in Sciences · Honors Program · GPA 3.9/4.0</div>
-          <div class="when">August 2025 – Present</div>
-        </div>
-        <div class="edu-block">
-          <div class="school">University of Cincinnati</div>
-          <div class="deg">Carl H. Lindner College of Business · Finance &amp; Business Analytics coursework before transferring · GPA 4.0/4.0</div>
-          <div class="when">August 2024 – May 2025</div>
-        </div>
-        <div class="skill-block">
-          <h3>Technical</h3>
-          <div class="skill-tags"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Snowflake / star schema</span><span>SQL · Azure SQL</span><span>Python</span><span>Excel · Power Pivot</span></div>
-        </div>
-        <div class="skill-block">
-          <h3>Analytical methods</h3>
-          <div class="skill-tags"><span>Data modeling</span><span>KPI development</span><span>RFM segmentation</span><span>ETL</span><span>BI reporting</span><span>Exploratory analysis</span></div>
-        </div>
-        <div class="skill-block">
-          <h3>AI-augmented analysis</h3>
-          <div class="skill-tags"><span>Prompt engineering</span><span>Claude</span><span>Gemini</span><span>Grok</span></div>
         </div>
       </div>
     </div>
